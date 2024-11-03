@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Fishing Logbook</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white p-6">
+    <div class="max-w-3xl mx-auto bg-gray-800 bg-opacity-50 rounded-lg p-6 backdrop-filter backdrop-blur-lg">
+        <nav class="mb-4">
+            <ul class="flex justify-around">
+                <li><a class="text-white hover:bg-gray-700 p-2 rounded" href="#new-entry">New Entry</a></li>
+                <li><a class="text-white hover:bg-gray-700 p-2 rounded" href="#log-history">Log History</a></li>
+            </ul>
+        </nav>
+
+        <hr class="border-gray-600 mb-4"> <!-- Divider -->
+
+        <div id="new-entry" class="form-container mb-6">
+            <h2 class="text-xl font-bold mb-4">New Entry</h2>
+            <form id="entry-form" class="space-y-4">
+                <label for="date" class="block">Date:</label>
+                <input type="date" id="date" class="w-full p-2 rounded bg-gray-700" required>
+
+                <label for="time" class="block">Time:</label>
+                <input type="text" id="time" class="w-full p-2 rounded bg-gray-700" readonly>
+
+                <label for="vessel" class="block">Vessel Name:</label>
+                <input type="text" id="vessel" class="w-full p-2 rounded bg-gray-700" required>
+
+                <label for="captain" class="block">Captain's Name:</label>
+                <input type="text" id="captain" class="w-full p-2 rounded bg-gray-700" required>
+
+                <label for="location" class="block">Bay/Gulf Location (Example: Gulf of Mexico):</label>
+                <input type="text" id="location" class="w-full p-2 rounded bg-gray-700" required>
+
+                <label for="gps-coordinates" class="block">GPS Coordinates:</label>
+                <input type="text" id="gps-coordinates" class="w-full p-2 rounded bg-gray-700" readonly>
+
+                <button type="button" id="capture-location" class="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded">Capture Location</button>
+
+                <label for="temperature" class="block">Temperature (°F):</label>
+                <span id="temperature" class="block">N/A</span>
+
+                <label for="wind-speed" class="block">Wind Speed (mph):</label>
+                <input type="text" id="wind-speed" class="w-full p-2 rounded bg-gray-700" readonly>
+
+                <label for="weather-condition" class="block">Weather Condition:</label>
+                <input type="text" id="weather-condition" class="w-full p-2 rounded bg-gray-700" readonly>
+
+                <label for="catch-type" class="block">Catch Type:</label>
+                <select id="catch-type" class="w-full p-2 rounded bg-gray-700" required>
+                    <option value="Brown Shrimp">Brown Shrimp</option>
+                    <option value="White Shrimp">White Shrimp</option>
+                    <option value="Pink Shrimp">Pink Shrimp</option>
+                    <option value="Rock Shrimp">Rock Shrimp</option>
+                </select>
+
+                <label for="weight" class="block">Weight (lbs):</label>
+                <input type="number" id="weight" class="w-full p-2 rounded bg-gray-700" required>
+
+                <label for="size" class="block">Size:</label>
+                <select id="size" class="w-full p-2 rounded bg-gray-700" required>
+                    <option value="U-10: Colossal">U-10: Colossal</option>
+                    <option value="11/15: Jumbo">11/15: Jumbo</option>
+                    <option value="16/20: Extra-large">16/20: Extra-large</option>
+                    <option value="21/30: Large">21/30: Large</option>
+                    <option value="31/35: Medium">31/35: Medium</option>
+                    <option value="36/45: Small">36/45: Small</option>
+                </select>
+
+                <label for="notes" class="block">Notes:</label>
+                <textarea id="notes" class="w-full p-2 rounded bg-gray-700"></textarea>
+
+                <button type="button" id="save-entry" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded">Save Entry</button>
+            </form>
+        </div>
+
+        <!-- Log History Section -->
+        <div id="history">
+            <h2 class="text-xl font-bold mb-4">Log History</h2>
+            <div id="log-history" class="space-y-4"></div> <!-- Placeholder for displaying saved logs -->
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
